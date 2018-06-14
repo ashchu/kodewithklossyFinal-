@@ -1,65 +1,88 @@
 require 'bundler'
 Bundler.require
-require_relative 'models/model.rb'
+# require_relative 'models/model.rb'
 class MyApp < Sinatra::Base
 
   get '/' do
-    erb :index
+    erb :temp
   end
 
 # get 'middlenorcaltech' do
 #   erb:middlenorcaltech
   
-  get'/about' do
-    erb :about
+  
+  post '/temp' do
+  @user_task= params[:name]
+  @user_time= params[:timeDue]
+  @user_class= params[:Class]
+  
+  erb :temp
   end
   
-  get'/results' do
-    erb :results
-  end
+  # get'/about' do
+  #   erb :about
+  # end
   
+  # get'/results' do
+  #   erb :results
+  # end
   
-  post '/' do
-   # @newuser = User.new(params)
-      # subject= params[:user]
-      # age
-      # the_subject_choice = params[:choice]
-      # @ = user_variable(subject)
-      # thing = params[:subject]
-      subject = params[:subject]
-      age = params[:school_type]
-      location = params[:area]
-      trueGender = params[:gender]
-      hash = get_results(subject, trueGender, age, location)
-    @thegender = hash[:female].capitalize
-    @theresult = hash[:title].capitalize
-    @theimage = hash[:logo]
-    @theage = hash[:ageNumber].capitalize
-    @thebackground = hash[:background]
-    @thelocation = hash[:areaLocation]
-    @thepun = hash[:pun]
-      @camp1name = hash[:opportunity1][:name]
-      @camp1info = hash[:opportunity1][:info]
-      @camp1link = hash[:opportunity1][:link]
-      @camp1pic = hash[:opportunity1][:image]
-        @camp2name = hash[:opportunity2][:name]
-        @camp2info = hash[:opportunity2][:info]
-        @camp2link = hash[:opportunity2][:link]
-        @camp2pic = hash[:opportunity2][:image]
-      @camp3name = hash[:opportunity3][:name]
-      @camp3info = hash[:opportunity3][:info]
-      @camp3link = hash[:opportunity3][:link]
-      @camp3pic = hash[:opportunity3][:image]
-        @camp4name = hash[:opportunity4][:name]
-        @camp4info = hash[:opportunity4][:info]
-        @camp4link = hash[:opportunity4][:link]
-        @camp4pic = hash[:opportunity4][:image]
-      @camp5name = hash[:opportunity5][:name]
-      @camp5info = hash[:opportunity5][:info]
-      @camp5link = hash[:opportunity5][:link]
-      @camp5pic = hash[:opportunity5][:image]
-    erb :results
-  end
+  # post '/' do
+  # # @newuser = User.new(params)
+  #     # subject= params[:user]
+  #     # age
+  #     # the_subject_choice = params[:choice]
+  #     # @ = user_variable(subject)
+  #     # thing = params[:subject]
+  #     subject = params[:subject]
+  #     age = params[:school_type]
+  #     location = params[:area]
+  #     trueGender = params[:gender]
+  #     hash = get_results(subject, trueGender, age, location)
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+  #   @thegender = hash[:female].capitalize
+  #   @theresult = hash[:title].capitalize
+  #   @theimage = hash[:logo]
+  #   @theage = hash[:ageNumber].capitalize
+  #   @thebackground = hash[:background]
+  #   @thelocation = hash[:areaLocation]
+  #   @thepun = hash[:pun]
+  #     @camp1name = hash[:opportunity1][:name]
+  #     @camp1info = hash[:opportunity1][:info]
+  #     @camp1link = hash[:opportunity1][:link]
+  #     @camp1pic = hash[:opportunity1][:image]
+  #       @camp2name = hash[:opportunity2][:name]
+  #       @camp2info = hash[:opportunity2][:info]
+  #       @camp2link = hash[:opportunity2][:link]
+  #       @camp2pic = hash[:opportunity2][:image]
+  #     @camp3name = hash[:opportunity3][:name]
+  #     @camp3info = hash[:opportunity3][:info]
+  #     @camp3link = hash[:opportunity3][:link]
+  #     @camp3pic = hash[:opportunity3][:image]
+  #       @camp4name = hash[:opportunity4][:name]
+  #       @camp4info = hash[:opportunity4][:info]
+  #       @camp4link = hash[:opportunity4][:link]
+  #       @camp4pic = hash[:opportunity4][:image]
+  #     @camp5name = hash[:opportunity5][:name]
+  #     @camp5info = hash[:opportunity5][:info]
+  #     @camp5link = hash[:opportunity5][:link]
+  #     @camp5pic = hash[:opportunity5][:image]
+  #   erb :results
+  # end
 end
 #     post '/results' do
 #   # @newuser = User.new(params)
